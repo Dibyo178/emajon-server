@@ -43,8 +43,8 @@ client.connect(err => {
 
 app.get('/products', (req, res) => {
   const search=req.query.search;
-  // productCollection.find({name:{$regex:search} })
-  productCollection.find({ })
+   productCollection.find({name:{$regex:search} })
+  // productCollection.find({ })
   .toArray((err,document)=>{
     res.send(document);
   })
@@ -74,7 +74,7 @@ app.get('/product/:key', (req, res) => {
 })
 app.post('/productByKeys',(req,res)=>{
   const productKeys=req.body;
-  // productCollection.find({key:{$in:productKeys}})
+   productCollection.find({key:{$in:productKeys}})
   productCollection.find({})
   .toArray((err,document)=>{
     res.send(document);
