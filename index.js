@@ -50,6 +50,16 @@ app.get('/products', (req, res) => {
   
   
 })
+app.get('/productt', (req, res) => {
+  const search=req.query.search;
+  productCollection.find({})
+  .toArray((err,document)=>{
+    res.send(document);
+  })
+  
+  
+})
+
 
 
 app.get('/product/:key', (req, res) => {
