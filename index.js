@@ -74,7 +74,8 @@ app.get('/product/:key', (req, res) => {
 })
 app.post('/productByKeys',(req,res)=>{
   const productKeys=req.body;
-  productCollection.find({key:{$in:productKeys}})
+  // productCollection.find({key:{$in:productKeys}})
+  productCollection.find({})
   .toArray((err,document)=>{
     res.send(document);
   })
